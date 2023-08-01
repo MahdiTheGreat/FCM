@@ -36,7 +36,12 @@ As we can see, with the increase in the number of clusters, Cost is decreasing. 
 Now the question is how many centers should we have? There is no ideal way to choose the number of centers, But there are several methods that are usually used. One of them is the Elbow method, which tells us to plot the same chart above and choose the number of centers that will not significantly reduce the cost from then on. As a result, according to the above figure, three centers can be a suitable option.
 
 # Implementation
-We implement the C-Means algorithm and run it on the four datasets we have and plot the cost in terms of C or the number of centers for each dataset and determine the optimal number of clusters through the elbow method. Since the data belongs to all the clusters, as a result, we cannot easily consider a specific color for each cluster and show and plot the data belonging to that cluster with that color (in fact, to accurately display the clustering output as Fuzzy; we need to use color gradient). As a result, for a simple display of the output, We're bringing clusters and data back to the world of Crisp data and we only consider which cluster each data belongs to more than the other clusters and give it the color of that cluster.
+We implement the C-Means algorithm and run it on the four datasets we have and plot the cost in terms of C or the number of centers for each dataset and determine the optimal number of clusters through the elbow method. Since the data belongs to all the clusters, as a result, we need to use a combination of colors with different gradients for each data, based on the membership of that data in different clusters. E.g. if there are two clusters with colors of green and blue and a data has 0.8 and 0.2 degrees of membership in two clusters retrospectively, the data will have more of a greenish color. An example can be seen below for two clusters:
+
+![image](https://github.com/MahdiTheGreat/FCM/assets/47212121/75931f53-0163-4375-b92e-9891f48efbf6)
+
+
+
 
 
 
