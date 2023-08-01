@@ -1,4 +1,4 @@
-# FCM
+![image](https://github.com/MahdiTheGreat/FCM/assets/47212121/21162cc5-ee57-4a58-b518-3679629a8284)![image](https://github.com/MahdiTheGreat/FCM/assets/47212121/f52538f8-09c8-41c1-8e5e-343a95d7ea88)# FCM
 In the first step in this algorithm, like K-Means, we specify the number of clusters we want to have. Then we randomly generate that number of initial cluster centroids. Next, we must do the following two things in a loop:
 
 1. Finding which cluster (or clusters) each data belongs to.
@@ -14,7 +14,7 @@ where X_k is the kth data, V is the set of clusters, v_i is the center of the it
 
 For the second part, We have to calculate the average of the points that belong to each cluster and consider it as new center of the said cluster. Since all points are essentially members of all clusters with varrying degrees of memebership, we must take a weighted average, as seen in the formula below:
 
-![image](https://github.com/MahdiTheGreat/FCM/assets/47212121/97422c2a-4e66-47f4-85bd-abc410ed61ac)
+![image](https://github.com/MahdiTheGreat/FCM/assets/47212121/6bf4380d-8675-4776-81fe-934a294ed6f4)
 
 In this way, those data that belong more to a cluster play a greater role in determining the center of that cluster; Which is logical.
 
@@ -22,7 +22,8 @@ In this way, those data that belong more to a cluster play a greater role in det
 
 In the previous part, we said that we should continue the loop until the clusters become stable. The question that arises is what does it mean to achieve stability and why should this happen? The point is that the two things we are doing in the loop are minimizing the following cost function behind the scenes:
 
-![image](https://github.com/MahdiTheGreat/FCM/assets/47212121/3c43da27-17a8-4ad4-be0e-ac8609906258)
+![image](https://github.com/MahdiTheGreat/FCM/assets/47212121/47b5773b-756f-422c-918a-a57ca355e518)
+
 
 That is, they are minimizing the distance of each data from the centers to which they belong to (in fact, taking the derivative of this function and setting it equal to zero will lead to the same two formulas as before). So we are solving an optimization problem in clustering with FCM and iteratively proceed to reach the minimum value.
 
