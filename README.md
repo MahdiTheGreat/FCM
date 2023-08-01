@@ -1,4 +1,4 @@
-![image](https://github.com/MahdiTheGreat/FCM/assets/47212121/21162cc5-ee57-4a58-b518-3679629a8284)![image](https://github.com/MahdiTheGreat/FCM/assets/47212121/f52538f8-09c8-41c1-8e5e-343a95d7ea88)# FCM
+# FCM
 In the first step in this algorithm, like K-Means, we specify the number of clusters we want to have. Then we randomly generate that number of initial cluster centroids. Next, we must do the following two things in a loop:
 
 1. Finding which cluster (or clusters) each data belongs to.
@@ -8,11 +8,12 @@ We run this loop for example 100 times to make sure that the clusters are stable
 
 For the first part, each cluster is viewed as a fuzzy set, therefore each data belongs to all clusters but with different amounts of membership. The membership function for the kth data in the ith cluster is calculated according to the following formula:
 
-![image](https://github.com/MahdiTheGreat/FCM/assets/47212121/af1f226e-6536-4b87-9d0d-c9cf09045d6c)
+![image](https://github.com/MahdiTheGreat/FCM/assets/47212121/924dbceb-8e72-4890-ba1a-b985f116f844)
 
-where X_k is the kth data, V is the set of clusters, v_i is the center of the ith cluster and m is a parameter that is in the interval [2,1) that must be specified in advance. In fact, the closer this value is to one, the closer we are to k-means clustering, and the fuzzy part of this algorithm will have less impact.
 
-For the second part, We have to calculate the average of the points that belong to each cluster and consider it as new center of the said cluster. Since all points are essentially members of all clusters with varrying degrees of memebership, we must take a weighted average, as seen in the formula below:
+where X_k is the kth data, V is the set of clusters, v_i is the center of the ith cluster and m is a parameter in the interval [2,1) that must be specified in advance. In fact, the closer this value is to one, the closer we are to k-means clustering, and the fuzzy part of this algorithm will have less impact.
+
+For the second part, We have to calculate the average of the points that belong to each cluster and consider it as the new center of the said cluster. Since all points are essentially members of all clusters with varying degrees of membership, we must take a weighted average, as seen in the formula below:
 
 ![image](https://github.com/MahdiTheGreat/FCM/assets/47212121/6bf4380d-8675-4776-81fe-934a294ed6f4)
 
@@ -20,7 +21,7 @@ In this way, those data that belong more to a cluster play a greater role in det
 
 # Cost function and how to choose the optimal number of centers
 
-In the previous part, we said that we should continue the loop until the clusters become stable. The question that arises is what does it mean to achieve stability and why should this happen? The point is that the two things we are doing in the loop are minimizing the following cost function behind the scenes:
+In the previous part, we said we should continue the loop until the clusters become stable. The question that arises is what does it mean to achieve stability and why should this happen? The point is that the two things we are doing in the loop are minimizing the following cost function behind the scenes:
 
 ![image](https://github.com/MahdiTheGreat/FCM/assets/47212121/47b5773b-756f-422c-918a-a57ca355e518)
 
